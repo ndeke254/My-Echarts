@@ -1,0 +1,20 @@
+/* Whole document: */
+body{
+  font-family: Helvetica;
+  font-size: 12pt;
+  background-color: #ffffb3;
+  color: darkgreen;
+  
+}
+/* Headers */
+h1,h2,h3,h4,h5,h6{
+  font-size: 25px;
+  font-weight: bold;
+  
+}
+
+li {
+  padding-left: 20px;
+    display: inline;
+}
+
