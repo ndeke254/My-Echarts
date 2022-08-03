@@ -38,11 +38,15 @@ library(fontawesome)
 counties_kenya <-read_excel("counties_kenya.xlsx")
 ```
 <div style="text-align:center;">
+Jefferson Ndeke  
+2022-08-03
+<div>
 <li> [`r fa("twitter", fill = "darkgreen")`](https://twitter.com/jefferson_ndeke "Twitter") </li>
 <li> [`r fa("linkedin", fill = "darkgreen")`](https://www.linkedin.com/in/jefferson-ndeke-027062202/ "LinkedIn")
 </li>
 <li> [`r fa("github", fill = "darkgreen")`](https://github.com/ndeke254 "Github")
 </li>
+</div>
 </div>
 
 # Introduction
@@ -73,29 +77,28 @@ radial_gradient <- htmlwidgets::JS(
 
 #plot
 data |> 
-  arrange(desc(`Area (km2)`)) |> 
+  arrange(desc(`Area (km2)`)) |> #arrange in descending order
   e_charts(name) |>
   e_bar(`Area (km2)`,
         showBackground=TRUE,
         emphasis = list(
           focus = "item"),
         itemStyle=list(
-          shadowBlur=1,
+          shadowBlur=1, #customise bars
           shadowColor='#4f1721',
           shadowOffsetY=2))|>
-  e_animation(duration = 4000)|>
-  e_tooltip(trigger='item',backgroundColor='#e6e6e6')|>
-  e_animation(duration = 4000)|>
-  e_axis_labels(x='Counties',y = 'Area in km2') |> 
+  e_animation(duration = 4000)|> #duration in plot animation
+  e_tooltip(trigger='item',backgroundColor='#e6e6e6')|> #customise tool tip 
+  e_axis_labels(x='Counties',y = 'Area in km2') |> #axis
   e_title(text=paste('AREA COVERED BY EACH COUNTY IN KENYA'),
           subtext="Analyst: Jefferson Ndeke  Data: IEBC Kenya",
           left='center',top=10,
-          sublink = 'https://github.com/ndeke254') |>
+          sublink = 'https://github.com/ndeke254') |> #title
   e_x_axis(axisLabel = list(interval = 0, rotate = 45)) |>  # rotate
-  e_toolbox_feature(feature = c("restore","saveAsImage"),type='bar') |>
+  e_toolbox_feature(feature = c("restore","saveAsImage"),type='bar') |> #features to interact
   e_legend(orient = 'vertical',right = '2', top = '7%') |>
-  e_datazoom(type='inside') |>
-  e_grid(show=TRUE,backgroundColor=radial_gradient)|>
+  e_datazoom(type='inside') |> #zoom to view
+  e_grid(show=TRUE,backgroundColor=radial_gradient)|> #grid
   e_color(background='#cdd0d5') |>
   e_x_axis(axisTick=list(
     alignWithLabel= TRUE
@@ -269,7 +272,8 @@ data |>
                type='dashed')))
 
 ```
-
+ 
+ 
 # Conclusion
 
 **The bridging of R and javascript proves in marvelous the generation of graphical plots**
